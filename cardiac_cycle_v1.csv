@@ -1,0 +1,6 @@
+Phase,Description,Electrical_Event,Valve_Status,Pressure_Change
+Atrial_Systole,Atria contract to top off ventricles,P-Wave,AV_Open_Semilunar_Closed,Low
+Isovolumetric_Contraction,Ventricles start contracting,QRS_Complex,All_Valves_Closed,Rapid_Increase
+Ventricular_Ejection,Blood pumped to lungs/body,ST_Segment,Semilunar_Open_AV_Closed,High
+Isovolumetric_Relaxation,Ventricles start to relax,T-Wave,All_Valves_Closed,Rapid_Decrease
+Passive_Filling,Ventricles fill with blood,Quiet_Period,AV_Open_Semilunar_Closed,Minimum
