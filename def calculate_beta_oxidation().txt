@@ -1,0 +1,34 @@
+def calculate_beta_oxidation():
+    print("\n--- ⚡ Beta Oxidation ATP Calculator ---")
+    print("Calculates ATP yield for a saturated, even-chain fatty acid.")
+    
+    try:
+        carbons = int(input("Enter number of Carbon atoms (e.g., 16 for Palmitic): "))
+        
+        # Validation: Must be even and positive
+        if carbons % 2 != 0:
+            print("⚠️ This simple tool only calculates for EVEN carbon chains.")
+            return
+        
+        # The Calculations
+        acetyl_coa = carbons // 2
+        rounds = acetyl_coa - 1
+        
+        # ATP Breakdown (Modern P/O Ratios)
+        # 1 Round produces 1 NADH (2.5 ATP) + 1 FADH2 (1.5 ATP) = 4 ATP
+        # 1 Acetyl-CoA produces 10 ATP in Krebs Cycle
+        
+        atp_from_rounds = rounds * 4
+        atp_from_krebs = acetyl_coa * 10
+        activation_cost = 2
+        
+        total_atp = atp_from_rounds + atp_from_krebs - activation_cost
+        
+        # Display Results
+        print(f"\n🧪 Breakdown for {carbons}-Carbon Fatty Acid:")
+        print(f"   • {rounds} Rounds of Beta Oxidation")
+        print(f"   • {acetyl_coa} Acetyl-CoA produced")
+        print(f"   • Total Yield: {total_atp} ATP")
+        
+    except ValueError:
+        print("Error: Please enter a whole number.")
